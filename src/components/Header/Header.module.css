@@ -1,0 +1,53 @@
+.header {
+    background-image: url('../../../public/programacao.jpg');
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    padding: 10px 0 0px 0;
+    position: relative;
+}
+
+.header img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+}
+
+.navbar nav {
+    background-color: rgba(0, 0, 0, 0.5); 
+    padding: 10px 0; 
+}
+
+.navbar nav ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    gap: 15%;
+}
+
+.navbar nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.2rem;
+    padding: 5px 0;
+    position: relative; 
+    transition: color 0.3s ease;
+}
+
+.navbar nav ul li a:hover {
+    color: #ff4d4d;
+}
+
+.navbar nav ul li a.active::after {
+    content: "";
+    position: absolute;
+    bottom: -5px; 
+    left: 0;
+    right: 0;
+    height: 3px;
+    background-color: red;
+}
