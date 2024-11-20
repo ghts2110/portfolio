@@ -23,7 +23,7 @@ function Portfolio() {
       reescrevendo histórias.`,
       links: [
         { type: "GitHub", url: "https://github.com/ghts2110/Fenix" },
-        { type: "Site", url: "https://www.fenix.org.br" },
+        { type: "Site", url: "" },
       ],
     },
     {

@@ -26,7 +26,7 @@ function Header() {
             </li>
             <li>
               <a
-                href="#Summary"
+                href="/summary"
                 className={activeSection === "summary" ? styles.active : ""}
                 onClick={() => handleSetActive("summary")}
               >
@@ -35,7 +35,7 @@ function Header() {
             </li>
             <li>
               <a
-                href="#Social"
+                href="/social"
                 className={activeSection === "social" ? styles.active : ""}
                 onClick={() => handleSetActive("social")}
               >
