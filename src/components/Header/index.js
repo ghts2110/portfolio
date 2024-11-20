@@ -1,13 +1,8 @@
 import styles from "./Header.module.css";
-import React, { useState } from "react";
+import React from "react";
+import { NavLink } from "react-router-dom";
 
 function Header() {
-  const [activeSection, setActiveSection] = useState("portfolio");
-
-  const handleSetActive = (section) => {
-    setActiveSection(section);
-  };
-
   return (
     <header className={styles.header}>
       <div className={styles.navbar}>
@@ -16,31 +11,28 @@ function Header() {
         <nav>
           <ul>
             <li>
-              <a
-                href="/portfolio"
-                className={activeSection === "portfolio" ? styles.active : ""}
-                onClick={() => handleSetActive("portfolio")}
+              <NavLink
+                to="/portfolio"
+                className={({ isActive }) => (isActive ? styles.active : "")}
               >
                 Portfolio
-              </a>
+              </NavLink>
             </li>
             <li>
-              <a
-                href="/summary"
-                className={activeSection === "summary" ? styles.active : ""}
-                onClick={() => handleSetActive("summary")}
+              <NavLink
+                to="/summary"
+                className={({ isActive }) => (isActive ? styles.active : "")}
               >
                 Summary
-              </a>
+              </NavLink>
             </li>
             <li>
-              <a
-                href="/social"
-                className={activeSection === "social" ? styles.active : ""}
-                onClick={() => handleSetActive("social")}
+              <NavLink
+                to="/social"
+                className={({ isActive }) => (isActive ? styles.active : "")}
               >
                 Social
-              </a>
+              </NavLink>
             </li>
           </ul>
         </nav>
