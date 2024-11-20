@@ -6,7 +6,7 @@ function Portfolio() {
   // Dados dos projetos
   const projects = [
     {
-      image: "/competitiveProgramming.jpeg", // Substitua pelo link da imagem
+      image: "/competitiveProgramming.jpeg",
       title: "Programação Competitiva",
       description: `Programação Competitiva envolve resolver problemas desafiadores usando algoritmos e estruturas de dados. 
       É uma área que desenvolve habilidades analíticas, otimização de código e trabalho em equipe. 
@@ -16,14 +16,24 @@ function Portfolio() {
       ],
     },
     {
-      image: "/fenix.jpg", // Substitua pelo link da imagem
+      image: "/fenix.jpg",
       title: "Instituição Fênix",
       description: `O Instituto Fênix é uma organização dedicada à reintegração social e ao apoio a pessoas privadas de liberdade 
       e egressos do sistema prisional. Sua missão é oferecer oportunidades e construir um caminho de transformação, 
       reescrevendo histórias.`,
       links: [
         { type: "GitHub", url: "https://github.com/ghts2110/Fenix" },
-        { type: "Site", url: "https://www.fenix.org.br" }, // Substitua pelo link correto do site
+        { type: "Site", url: "https://www.fenix.org.br" },
+      ],
+    },
+    {
+      image: "/mfcc.png", 
+      title: "MFCC (Mel-Frequency Cepstral Coefficients)",
+      description: `MFCC é uma representação compacta de áudio usada principalmente em reconhecimento de fala e análise de som. 
+      Ele extrai características do espectro de frequência baseado na percepção humana, utilizando a escala Mel para representar 
+      frequências percebidas.`,
+      links: [
+        { type: "PDF", url: "/ARTIGO FACEP - Documentos Google.pdf" },
       ],
     },
   ];
@@ -45,17 +55,28 @@ function Portfolio() {
             <p className={styles.description}>{project.description}</p>
             <hr className={styles.separator} />
             <div className={styles.links}>
-              {project.links.map((link, i) => (
-                <a
-                  key={i}
-                  href={link.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={link.type === "GitHub" ? styles.githubLink : styles.siteLink}
-                >
-                  {link.type}
-                </a>
-              ))}
+              {project.links.map((link, i) =>
+                link.type === "PDF" ? (
+                  <a
+                    key={i}
+                    href={link.url}
+                    download
+                    className={styles.downloadButton}
+                  >
+                    Baixar PDF
+                  </a>
+                ) : (
+                  <a
+                    key={i}
+                    href={link.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={link.type === "GitHub" ? styles.githubLink : styles.siteLink}
+                  >
+                    {link.type}
+                  </a>
+                )
+              )}
             </div>
           </div>
         ))}
