@@ -6,8 +6,8 @@ function Header() {
   return (
     <header className={styles.header}>
       <div className={styles.navbar}>
-        <img src="/I.jpeg" alt="Gabriel" className={styles.profileImg} />
-        <h1>Gabriel Tôrres</h1>
+      <img src={process.env.PUBLIC_URL + "/I.jpeg"} alt="Gabriel" className={styles.profileImg} />
+      <h1>Gabriel Tôrres</h1>
         <nav>
           <ul>
             <li>

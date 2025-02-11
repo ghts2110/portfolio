@@ -50,7 +50,7 @@ function Portfolio() {
       <div className={styles.container}>
         {projects.map((project, index) => (
           <div key={index} className={styles.card}>
-            <img src={project.image} alt={project.title} className={styles.image} />
+            <img src={process.env.PUBLIC_URL + project.image} alt={project.title} className={styles.image} />
             <h3 className={styles.title}>{project.title}</h3>
             <p className={styles.description}>{project.description}</p>
             <hr className={styles.separator} />
